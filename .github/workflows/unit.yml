@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    # <insert integration tests needing secrets>
-
+    - run: echo $MY
+      env: 
+        MY: ${{ secrets.MY }}
     - run: echo "Unit tests... success! ;-)"

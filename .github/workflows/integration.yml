@@ -33,8 +33,11 @@ jobs:
       with:
         ref: 'refs/pull/${{ github.event.client_payload.pull_request.number }}/merge'
 
-    # <insert integration tests needing secrets>
-
+    - run: |
+        echo $MY
+      env:
+        MY: ${{ secrets.MY }}
+      
     - run: |
         echo "Integration tests... success! ;-)"
 
